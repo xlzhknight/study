@@ -48,3 +48,35 @@ git stash pop
 git stash apply stash@{数字}
 ```
 
+### git restore
+
+```shell
+#由于放弃对文件的修改，前提是：文件被追踪
+git restore 文件1 文件2
+#取消暂存
+git restore --staged 文件1 文件2
+#所有文件，则输入.
+```
+
+### git reset
+
+```shell
+#由于撤销add或者commit
+
+#--soft
+#执行完commit后，想撤回commit。仅仅是撤回commit操作，您写的代码仍然保留。
+git reset --soft HEAD^
+
+#--mixed，这个为默认参数。
+#撤销commit且撤销add。
+git reset --mixed HEAD^ 和 git reset HEAD^ 效果是一样的。
+
+#--hard
+#删除工作空间改动代码，撤销commit，撤销git add . 
+#注意完成这个操作后，就恢复到了上一次的commit状态。
+git reset --hard HEAD^
+```
+
+
+
+![image-20230422130601901](git操作.assets/image-20230422130601901.png)
