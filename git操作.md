@@ -24,10 +24,14 @@ git pull origin <远程分支>:<本地分支>
 ```shell
 #切换分支，切换时，路径下面的内容会跟随变化（包括删除和修改）
 git checkout <分支名称>
+
+#放弃对文件的修改，恢复到上一次add
+git checkout -- 文件
 ```
 
 ### git stash
 
+```shell
 #将当前更改的代码，暂存到stash，并将当前分支下的内容，恢复到最新的一次commit
 #注意，新创建的文件未被追踪，需要先git add进去
 git add 文件
@@ -36,6 +40,7 @@ git stash push
 git stash push -m "描述"
 #暂存后切换分支,不会丢失stash内的内容，使用：
 git checkout <分支名词>
+```
 
 ```shell
 #查看stash内的列表
@@ -49,11 +54,11 @@ git stash apply stash@{数字}
 ### git restore
 
 ```shell
-#由于放弃对文件的修改，前提是：文件被追踪
+#由于放弃对文件的修改，恢复到上一次add，前提是：文件被追踪。
 git restore 文件1 文件2
 #取消暂存
 git restore --staged 文件1 文件2
-#所有文件，则输入.
+#所有文件，则输入. ,不会删除新文件
 ```
 
 ### git reset
