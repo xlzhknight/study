@@ -28,16 +28,14 @@ git checkout <分支名称>
 
 ### git stash
 
-```shell
 #将当前更改的代码，暂存到stash，并将当前分支下的内容，恢复到最新的一次commit
 #注意，新创建的文件未被追踪，需要先git add进去
 git add 文件
 git stash push
 #或者
-git stash pusSh -m "描述"
+git stash push -m "描述"
 #暂存后切换分支,不会丢失stash内的内容，使用：
 git checkout <分支名词>
-```
 
 ```shell
 #查看stash内的列表
@@ -76,7 +74,5 @@ git reset --mixed HEAD^ 和 git reset HEAD^ 效果是一样的。
 #注意完成这个操作后，就恢复到了上一次的commit状态。
 git reset --hard HEAD^
 ```
-
-
 
 ![image-20230422130601901](git操作.assets/image-20230422130601901.png)
